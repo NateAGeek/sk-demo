@@ -2,7 +2,7 @@ import { add, dinero } from 'dinero.js';
 import './App.css'
 import CalculatorButton from './components/CalculatorButton/CalculatorButton';
 import { useCalculatorContext } from './state/CalculatorContext'
-import { dineroBigint, ETH } from './utils/Currencies';
+import { currencyFormat, dineroBigint, ETH, toStringFormat } from './utils/Currencies';
 
 function App() {
   const {calculatorInputValue, setCalculatorInputValue, previousValue, setPreviousValue} = useCalculatorContext();
@@ -20,21 +20,27 @@ function App() {
         }}/>
 
         <CalculatorButton textOrIcon={"+"} onClick={() => {
-          const input_one = dineroBigint({
-            amount: BigInt(previousValue.replace(".", "")),
-            currency: ETH,
-            scale: BigInt(previousValue.indexOf("."))
-          });
-
-          const input_two = dineroBigint({
-            amount: BigInt(calculatorInputValue.replace(".", "")),
-            currency: ETH,
-            scale: BigInt(calculatorInputValue.indexOf("."))
-          });
-
-          const sum = add(input_one, input_two);
-          setPreviousValue("0");
-          console.log(sum.toJSON());
+          if (previousValue === "") {
+            setPreviousValue(calculatorInputValue);
+            setCalculatorInputValue("");
+          } else {
+            console.log(previousValue.indexOf("."))
+            const input_one = dineroBigint({
+              amount: BigInt(previousValue.replace(".", "")),
+              currency: ETH,
+              scale: BigInt(previousValue.indexOf("."))
+            });
+  
+            const input_two = dineroBigint({
+              amount: BigInt(calculatorInputValue.replace(".", "")),
+              currency: ETH,
+              scale: BigInt(calculatorInputValue.indexOf("."))
+            });
+  
+            const sum = add(input_one, input_two);
+            
+            console.log(currencyFormat(sum));
+          }
         }}/>
         <CalculatorButton textOrIcon={"-"} onClick={() => {
           
