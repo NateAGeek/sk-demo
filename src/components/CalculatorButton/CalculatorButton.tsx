@@ -5,11 +5,13 @@ export interface CalculatorButtonProps {
     textOrIcon: string | JSX.Element,
     type: 'primary' | 'secondary' | 'trinary',
     onClick: React.MouseEventHandler<HTMLButtonElement>,
+    classNames?: classnames.ArgumentArray
 }
 
 export default function CalculatorButton({
     textOrIcon,
     type,
+    classNames,
     onClick
 }: CalculatorButtonProps) {
     return (
@@ -18,8 +20,8 @@ export default function CalculatorButton({
             'h-16',
             'text-4xl',
             'rounded-md',
-            'md:w-24',
-            'md:h-24',
+            'sm:w-24',
+            'sm:h-24',
             {   //TODO: simplify this with theme colors and just using a string interpolation 
                 'bg-[#4D5880]': type === 'primary',
                 'bg-[#D37FCC]': type === 'secondary',
@@ -27,7 +29,9 @@ export default function CalculatorButton({
                 'text-[#D6D8DA]': type === 'primary',
                 'text-white': type === 'secondary',
                 'text-[#3C4564]': type === 'trinary',
-            })} onClick={onClick}>
+            },
+            classNames
+            )} onClick={onClick}>
             {textOrIcon}
         </button>
     );
