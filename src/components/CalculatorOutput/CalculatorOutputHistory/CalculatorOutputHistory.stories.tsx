@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof CalculatorOutputHistoryRender> = (args) =>
 
 export const Default = Template.bind({});
 Default.args = {
-    historicalOperations: [
+    calculationHistory: [
         '123 + 32 = 155',
         '123 + 32 = 155',
         '123 + 32 = 155',
