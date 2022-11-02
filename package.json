@@ -13,10 +13,17 @@
   },
   "dependencies": {
     "@dinero.js/calculator-bigint": "^2.0.0-alpha.8",
+    "bn.js": "^5.2.1",
     "classnames": "^2.3.2",
     "dinero.js": "^2.0.0-alpha.8",
+    "eslint": "^8.26.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-storybook": "^0.6.6",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^1.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
@@ -28,6 +35,7 @@
     "@storybook/builder-vite": "^0.2.5",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@types/bn.js": "^5.1.1",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",

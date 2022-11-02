@@ -3,38 +3,37 @@ import { CalculatorConvertButtonRender, CalculatorConvertButtonRenderProps } fro
 import { CalculatorOutputHistoryRender } from './CalculatorOutputHistory/CalculatorOutputHistory';
 
 export interface CalculatorOutputRenderProps {
-    output: string,
+    input: string,
     convertOptions: CalculatorConvertButtonRenderProps[], //TODO: change this fro props
-    historyCalculations: string[],
-    onOutputChange?: React.ChangeEventHandler<HTMLInputElement>
+    calculationHistory: string[],
+    onInputChange?: React.ChangeEventHandler<HTMLInputElement>
 }
 
 export function CalculatorOutputRender({
-    output,
+    input,
     convertOptions,
-    historyCalculations,
-    onOutputChange
+    calculationHistory,
+    onInputChange
 }: CalculatorOutputRenderProps) {
     return (
         <div className={classnames(
             'bg-[#262A36]',
             'flex',
-            'flex-col'
+            'flex-col',
+            'flex-grow'
         )}>
             <div className={classnames(
                 'flex',
                 'justify-end',
                 'my-2',
             )}>
-                {convertOptions.map(convertProp => (
-                    <CalculatorConvertButtonRender {...convertProp} classNames={[
+                {convertOptions.map((convertProp, index) => (
+                    <CalculatorConvertButtonRender key={`convert-item-${index}`} {...convertProp} classNames={[
                         'mr-2'
                     ]}/>
                 ))}
             </div>
-            <div className={classnames('m-2', 'flex-grow')}>
-                <CalculatorOutputHistoryRender historicalOperations={historyCalculations}/>
-            </div>
+            <CalculatorOutputHistoryRender calculationHistory={calculationHistory}/>
             <input type={'text'} className={classnames(
                 'text-white',
                 'text-right',
@@ -43,7 +42,7 @@ export function CalculatorOutputRender({
                 'border-transparent',
                 'focus:border-transparent',
                 'focus:ring-0'
-            )} value={output} onChange={onOutputChange}></input>
+            )} value={input} onChange={onInputChange}></input>
         </div>
     );
 }

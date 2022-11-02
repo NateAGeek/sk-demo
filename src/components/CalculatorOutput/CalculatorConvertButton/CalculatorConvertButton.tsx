@@ -23,6 +23,7 @@ export function CalculatorConvertButtonRender({
             'text-white',
             'rounded-lg',
             'text-lg',
+            'active:opacity-50',
             {
                 'border-2': selected,
                 'border-[#D37FCC]': selected,

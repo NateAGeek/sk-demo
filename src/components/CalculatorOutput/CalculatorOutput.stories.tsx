@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof CalculatorOutputRender> = (args) => <Calcu
 
 export const Primary = Template.bind({});
 Primary.args = {
-    output: '123.12',
+    input: '123.12',
     convertOptions: [
       {
         convertText: 'ETH',
@@ -26,7 +26,7 @@ Primary.args = {
         selected: false,
       }
     ],
-    historyCalculations: [
+    calculationHistory: [
       '123 + 32 = 155',
       '123 + 32 = 155',
       '123 + 32 = 155',

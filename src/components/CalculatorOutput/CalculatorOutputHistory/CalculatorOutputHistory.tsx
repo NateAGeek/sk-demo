@@ -3,27 +3,34 @@ import classnames from 'classnames';
 
 
 export interface CalculatorOutputHistoryRenderProps {
-    historicalOperations: string[],
+    calculationHistory: string[],
     topToBottom?: boolean
 }
 export function CalculatorOutputHistoryRender({
-    historicalOperations,
+    calculationHistory,
     topToBottom
 }: CalculatorOutputHistoryRenderProps) {
     return (
         <div className={classnames(
             'overflow-y-hidden',
             'bg-[#262A36]',
-            // 'max-h-24'
+            'flex',
+            'flex-col',
+            'flex-grow',
+            'justify-end'
         )}>
-            {historicalOperations.map((operation, index) => (
-                <div className={classnames(
+            {calculationHistory.map((calculation, index) => (
+                <div 
+                key={`operation-history-${index}`}
+                style={{
+                    opacity: (100 - 10 * (calculationHistory.length - index))/100
+                }} 
+                className={classnames(
                     'text-white',
-                    `text-white/${100 - 10 * index}`, //TODO: Need to figure out why the opacity does not work
                     'text-lg',
                     'text-end'
                 )}>
-                    {operation}
+                    {calculation}
                 </div>
             ))}
         </div>
