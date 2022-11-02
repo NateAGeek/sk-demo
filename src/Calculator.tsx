@@ -86,7 +86,7 @@ export default function Calculator() {
         });
         setCalculationHistory(history => [
           ...history,
-          `${weiToCurrencyString(previousInput, currentSelectedCurrency)} ${selectedOperation} ${weiToCurrencyString(currentInput, currentSelectedCurrency)} = ${weiToCurrencyString(result, currentSelectedCurrency)}`
+          `${weiToCurrencyString(previousInput, currentSelectedCurrency)} ${Currencies[previousInput.currency]} ${selectedOperation} ${weiToCurrencyString(currentInput, currentSelectedCurrency)} ${Currencies[currentInput.currency]} = ${weiToCurrencyString(result, currentSelectedCurrency)} ${Currencies[currentSelectedCurrency]}`
         ]);
         setPreviousInput({
           stringValue: weiToCurrencyString(result, currentSelectedCurrency),
