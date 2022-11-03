@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
 
 import {CalculatorOutputRender} from './CalculatorOutput';
 
@@ -11,28 +11,28 @@ const Template: ComponentStory<typeof CalculatorOutputRender> = (args) => <Calcu
 
 export const Primary = Template.bind({});
 Primary.args = {
-    input: '123.12',
-    convertOptions: [
-      {
-        convertText: 'ETH',
-        selected: true,
-      },
-      {
-        convertText: 'GWEI',
-        selected: false,
-      },
-      {
-        convertText: 'WEI',
-        selected: false,
-      }
-    ],
-    calculationHistory: [
-      '123 + 32 = 155',
-      '123 + 32 = 155',
-      '123 + 32 = 155',
-      '123 + 32 = 155',
-      '123 + 32 = 155',
-      '123 + 32 = 155',
-      '123 + 32 = 155',
-    ]
+  input: '123.12',
+  convertOptions: [
+    {
+      convertText: 'ETH',
+      selected: true,
+    },
+    {
+      convertText: 'GWEI',
+      selected: false,
+    },
+    {
+      convertText: 'WEI',
+      selected: false,
+    },
+  ],
+  calculationHistory: [
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+  ],
 };

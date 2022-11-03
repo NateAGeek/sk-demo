@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
 
 import CalculatorButton from './CalculatorButton';
 
@@ -11,16 +11,16 @@ const Template: ComponentStory<typeof CalculatorButton> = (args) => <CalculatorB
 
 export const Primary = Template.bind({});
 Primary.args = {
-    textOrIcon: '0',
-    type: 'primary'
+  textOrIcon: '0',
+  type: 'primary',
 };
 export const Secondary = Template.bind({});
 Secondary.args = {
-    textOrIcon: '0',
-    type: 'secondary'
+  textOrIcon: '0',
+  type: 'secondary',
 };
 export const Trinary = Template.bind({});
 Trinary.args = {
-    textOrIcon: '0',
-    type: 'trinary'
+  textOrIcon: '0',
+  type: 'trinary',
 };

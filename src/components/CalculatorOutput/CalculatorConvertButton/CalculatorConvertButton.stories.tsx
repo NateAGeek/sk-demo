@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
 
 import {CalculatorConvertButtonRender} from './CalculatorConvertButton';
 
@@ -11,12 +11,12 @@ const Template: ComponentStory<typeof CalculatorConvertButtonRender> = (args) =>
 
 export const Default = Template.bind({});
 Default.args = {
-    convertText: 'ETH'
+  convertText: 'ETH',
 };
 
 export const Selected = Template.bind({});
 Selected.args = {
-    convertText: 'ETH',
-    selected: true
+  convertText: 'ETH',
+  selected: true,
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import {ComponentStory, ComponentMeta} from '@storybook/react';
 
 import {CalculatorOutputHistoryRender} from './CalculatorOutputHistory';
 
@@ -11,14 +11,14 @@ const Template: ComponentStory<typeof CalculatorOutputHistoryRender> = (args) =>
 
 export const Default = Template.bind({});
 Default.args = {
-    calculationHistory: [
-        '123 + 32 = 155',
-        '123 + 32 = 155',
-        '123 + 32 = 155',
-        '123 + 32 = 155',
-        '123 + 32 = 155',
-        '123 + 32 = 155',
-        '123 + 32 = 155',
-    ]
+  calculationHistory: [
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+    '123 + 32 = 155',
+  ],
 };
 
